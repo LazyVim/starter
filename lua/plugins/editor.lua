@@ -26,8 +26,4 @@ return {
   --   config = true,
   --   keys = { { "<leader>z", "<cmd>ZenMode<cr>", desc = "Zen Mode" } },
   -- },
-
-  -- use mini.starter instead of alpha
-  -- { "goolord/alpha-nvim", enabled = false },
-  -- { "echasnovski/mini.starter", enabled = true },
 }
