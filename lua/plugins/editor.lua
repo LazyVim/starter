@@ -8,7 +8,7 @@ return {
   -- change trouble config
   -- {
   --   "folke/trouble.nvim",
-  --   config = { use_diagnostic_signs = true },
+  --   opts = { use_diagnostic_signs = true },
   -- },
 
   -- add symbols-outline

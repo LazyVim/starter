@@ -3,27 +3,35 @@ return {
   -- uncomment and add lsp servers with their config to servers below
   {
     "neovim/nvim-lspconfig",
-    -- you can do any additional lsp server setup here
-    -- return true if you don't want this server to be setup with lspconfig
-    ---@param server string lsp server name
-    ---@param opts _.lspconfig.options any options set for the server
-    -- setup_server = function(server, opts)
-    --   return false
-    -- end,
-    ---@type lspconfig.options
-    -- servers = {
-    --   jsonls = {},
-    --   sumneko_lua = {
-    --     settings = {
-    --       Lua = {
-    --         workspace = {
-    --           checkThirdParty = false,
-    --         },
-    --         completion = {
-    --           callSnippet = "Replace",
+    -- ---@class PluginLspOpts
+    -- opts = {
+    --   ---@type lspconfig.options
+    --   servers = {
+    --     jsonls = {},
+    --     sumneko_lua = {
+    --       settings = {
+    --         Lua = {
+    --           workspace = {
+    --             checkThirdParty = false,
+    --           },
+    --           completion = {
+    --             callSnippet = "Replace",
+    --           },
     --         },
     --       },
     --     },
+    --   },
+    --   -- you can do any additional lsp server setup here
+    --   -- return true if you don't want this server to be setup with lspconfig
+    --   ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
+    --   setup = {
+    --     -- example to setup with typescript.nvim
+    --     -- tsserver = function(_, opts)
+    --     --   require("typescript").setup({ server = opts })
+    --     --   return true
+    --     -- end,
+    --     -- Specify * to use this function as a fallback for any server
+    --     -- ["*"] = function(server, opts) end,
     --   },
     -- },
   },
@@ -31,11 +39,13 @@ return {
   -- uncomment and add tools to ensure_installed below
   {
     "williamboman/mason.nvim",
-    -- ensure_installed = {
-    --   "stylua",
-    --   "shellcheck",
-    --   "shfmt",
-    --   "flake8",
+    -- opts = {
+    --   ensure_installed = {
+    --     "stylua",
+    --     "shellcheck",
+    --     "shfmt",
+    --     "flake8",
+    --   },
     -- },
   },
 }
