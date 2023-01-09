@@ -23,9 +23,7 @@ Refer to the comments in the files on how to customize **LazyVim**.
 │   │   ├── lazy.lua
 │   │   └── options.lua
 │   └── plugins
-│       ├── editor.lua
-│       ├── lsp.lua
-│       └── treesitter.lua
+│       └── example.lua
 ├── init.lua
 └── stylua.toml
 </pre>
