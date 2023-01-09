@@ -148,7 +148,7 @@ return {
     end,
   },
 
-  -- the opts function can als be used to change the default opts:
+  -- the opts function can also be used to change the default opts:
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
