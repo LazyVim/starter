@@ -17,7 +17,7 @@ mv ~/.local/share/nvim ~/.local/share/nvim.bak
 ### 2. Clone the starter
 
 ```sh
-git clone https://github.com/LazyVim/LazyVim ~/.config/nvim
+git clone https://github.com/LazyVim/starter ~/.config/nvim
 ```
 
 ### 3. Start Neovim!
