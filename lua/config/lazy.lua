@@ -17,7 +17,9 @@ require("lazy").setup({
     -- { import = "lazyvim.plugins.extras.lang.json" },
   },
   defaults = {
-    lazy = true, -- every plugin is lazy-loaded by default
+    -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
+    -- If you know what you're doing, you can set this to `true` to have all your custom plugins lazy-loaded by default.
+    lazy = false,
     version = "*", -- try installing the latest stable version for plugins that support semver
   },
   install = { colorscheme = { "tokyonight", "habamax" } },
