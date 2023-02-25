@@ -217,6 +217,9 @@ return {
   -- first: disable default <tab> and <s-tab> behavior in LuaSnip
   {
     "L3MON4D3/LuaSnip",
+    -- install jsregexp. This is technically optional, but is required for 1:1 parity with VSCode snippets.
+    -- Read more about the impacts of the need for jsregexp with LuaSnip [here](https://github.com/L3MON4D3/LuaSnip/blob/master/DOC.md#transformations)
+    build = "make install_jsregexp",
     keys = function()
       return {}
     end,
