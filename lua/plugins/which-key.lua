@@ -97,10 +97,16 @@ return {
           "Navigate 4",
         },
       },
-      -- ["?"] = {
-      --   vim.cmd.Legendary,
-      --   "Legendary",
-      -- },
+      c = {
+        name = "Language",
+        r = {
+          function()
+            vim.cmd([[Telescope lsp_references]])
+          end,
+          "Find references",
+          remap = true,
+        },
+      },
     }
 
     wk.register(mappings, { mode = "n", prefix = "<leader>" })
