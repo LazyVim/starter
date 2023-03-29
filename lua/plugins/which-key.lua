@@ -2,6 +2,9 @@ return {
   "folke/which-key.nvim",
   config = function()
     local wk = require("which-key")
+    local mark = require("harpoon.mark")
+    local ui = require("harpoon.ui")
+    local term = require("harpoon.term")
 
     local mappings = {
       w = {
@@ -29,6 +32,75 @@ return {
         },
         d = { "<cmd><cr>", "which_key_ignore" },
       },
+      h = {
+        name = "Harpoon",
+        a = { mark.add_file, "Add file" },
+        h = { ui.toggle_quick_menu, "Toggle quick menu" },
+        n = {
+          function()
+            ui.nav_next()
+          end,
+          "Navigate next",
+        },
+        p = {
+          function()
+            ui.nav_prev()
+          end,
+          "Navigate previous",
+        },
+        ["1"] = {
+          function()
+            ui.nav_file(1)
+          end,
+          "Navigate 1",
+        },
+        ["2"] = {
+          function()
+            ui.nav_file(2)
+          end,
+          "Navigate 2",
+        },
+        ["3"] = {
+          function()
+            ui.nav_file(3)
+          end,
+          "Navigate 3",
+        },
+        ["4"] = {
+          function()
+            ui.nav_file(4)
+          end,
+          "Navigate 4",
+        },
+        ["&"] = {
+          function()
+            ui.nav_file(1)
+          end,
+          "Navigate 1",
+        },
+        ["é"] = {
+          function()
+            ui.nav_file(2)
+          end,
+          "Navigate 2",
+        },
+        ['"'] = {
+          function()
+            ui.nav_file(3)
+          end,
+          "Navigate 3",
+        },
+        ["'"] = {
+          function()
+            ui.nav_file(4)
+          end,
+          "Navigate 4",
+        },
+      },
+      -- ["?"] = {
+      --   vim.cmd.Legendary,
+      --   "Legendary",
+      -- },
     }
 
     wk.register(mappings, { mode = "n", prefix = "<leader>" })
