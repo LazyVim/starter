@@ -3,7 +3,7 @@ return {
   { "catppuccin/nvim", name = "catppuccin" },
 
   {
-    "LazyVim/LazyVim",
+    "jul-o/LazyVim",
     opts = {
       colorscheme = "catppuccin-frappe",
     },
