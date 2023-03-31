@@ -4,8 +4,9 @@ return {
     window = {
       position = "right",
       mappings = {
-        l = "toggle_node",
-        L = "close_all_nodes",
+        l = "open",
+        h = "close_node",
+        H = "close_all_nodes",
         ["<esc>"] = false,
       },
     },
