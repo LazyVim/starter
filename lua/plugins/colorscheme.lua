@@ -5,7 +5,7 @@ return {
   {
     "jul-o/LazyVim",
     opts = {
-      colorscheme = "catppuccin-mocha",
+      colorscheme = "catppuccin-frappe",
     },
   },
 }
