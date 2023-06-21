@@ -5,7 +5,7 @@ return {
     opts = {
       style = "moon",
       on_colors = function(colors)
-        colors.border = colors.purple
+        colors.border = colors.dark3
       end,
     },
   },
