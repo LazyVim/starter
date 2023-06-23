@@ -1,5 +1,11 @@
 return {
   {
+    "zbirenbaum/copilot-cmp",
+    config = function()
+      require("copilot_cmp").setup()
+    end,
+  },
+  {
     "hrsh7th/nvim-cmp",
     dependencies = {
       "hrsh7th/cmp-emoji",
@@ -15,7 +21,11 @@ return {
       local luasnip = require("luasnip")
       local cmp = require("cmp")
 
-      opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "emoji" } }))
+      opts.sources = cmp.config.sources(vim.list_extend(opts.sources, {
+        -- Copilot Source
+        { name = "copilot", group_index = 2 },
+        { name = "emoji" },
+      }))
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
