@@ -30,27 +30,40 @@ return {
     opts = {
       server = {
         autostart = false,
-        settings = {
-          ["rust-analyzer"] = {
-            checkOnSave = {
-              enable = false,
-              command = "check",
-              extraArgs = {},
-            },
-            procMacro = { enable = false },
-            diagnostics = {
-              enable = true,
-              disabled = { "unresolved", "unresolved-proc-macro", "unresolved-macro-call" },
-              enableExperimental = true,
-            },
-            cargo = {
-              buildScripts = {
+      },
+    },
+  },
+  {
+   "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        -- Ensure mason installs the server
+        rust_analyzer = {
+          settings = {
+            ["rust-analyzer"] = {
+              cargo = {
+                allFeatures = true,
+                loadOutDirsFromCheck = true,
+                runBuildScripts = false,
+              },
+              -- Add clippy lints for Rust.
+              checkOnSave = {
+                allFeatures = true,
+                command = "check",
+                extraArgs = { "--no-deps" },
+              },
+              procMacro = {
                 enable = false,
+                ignored = {
+                  ["async-trait"] = { "async_trait" },
+                  ["napi-derive"] = { "napi" },
+                  ["async-recursion"] = { "async_recursion" },
+                },
               },
             },
           },
         },
       },
-    },
-  },
+    }
+  }
 }
