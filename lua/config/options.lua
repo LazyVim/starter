@@ -5,3 +5,4 @@
 local opt = vim.opt
 
 opt.background = "light"
+opt.guifont = "Fira Code:h10"
