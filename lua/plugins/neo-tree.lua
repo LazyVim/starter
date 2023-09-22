@@ -9,6 +9,7 @@ return {
         hide_gitignored = true,
         hide_by_name = {
           ".git",
+          "build",
           -- '.DS_Store',
           -- 'thumbs.db',
         },
