@@ -24,7 +24,6 @@ return {
       },
     },
   },
-  { "wakatime/vim-wakatime" },
 
   {
     "LazyVim/LazyVim",
