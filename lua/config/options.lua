@@ -4,5 +4,6 @@
 --
 local opt = vim.opt
 
-opt.background = "light"
-opt.guifont = "Fira Code:h10"
+opt.background = "dark"
+opt.guifont = "Fira Code:h12"
+vim.api.nvim_set_var("gruvbox_contrast_dark", "hard")

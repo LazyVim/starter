@@ -1,9 +1,23 @@
 return {
-  { "ellisonleao/gruvbox.nvim" },
+  -- {
+  --   "ellisonleao/gruvbox.nvim",
+  --   priority = 1000,
+  --   lazy = true,
+  --   config = true,
+  --   opts = {
+  --     terminal_colors = false,
+  --   },
+  --
+  -- },
+  {
+    "morhetz/gruvbox",
+  },
   {
     "folke/tokyonight.nvim",
+    lazy = true,
     opts = {
       transparent = true,
+      style = "moon",
       styles = {
         sidebars = "transparent",
         floats = "transparent",
