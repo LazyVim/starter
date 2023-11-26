@@ -24,13 +24,6 @@ return {
       },
     },
   },
-
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "gruvbox",
-    },
-  },
   {
     "folke/zen-mode.nvim",
     opts = {
