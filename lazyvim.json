@@ -1,0 +1,15 @@
+{
+  "extras": [
+    "lazyvim.plugins.extras.formatting.black",
+    "lazyvim.plugins.extras.formatting.prettier",
+    "lazyvim.plugins.extras.lang.json",
+    "lazyvim.plugins.extras.lang.python",
+    "lazyvim.plugins.extras.lang.rust",
+    "lazyvim.plugins.extras.lang.typescript",
+    "lazyvim.plugins.extras.linting.eslint"
+  ],
+  "news": {
+    "NEWS.md": "2123"
+  },
+  "version": 2
+}
