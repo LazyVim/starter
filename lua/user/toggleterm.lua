@@ -54,7 +54,7 @@ end
 
 local function get_ssh_hosts(path)
   local hosts = {}
-  path = path or os.getenv("HOME") .. "/.ssh/config"
+  path = path or utils.os.home() .. "/.ssh/config"
 
   if type(path) ~= "string" then
     print("expected arg path of type 'string' actual  '" .. type(path))
@@ -128,8 +128,8 @@ function TermToggleBash(direction)
   if bash[direction].term == nil then
     bash[direction].term = Terminal:new({
       id = next_id(),
-      display_name = "bash:" .. direction,
-      cmd = "bash",
+      display_name = vim.o.shell .. ":" .. direction,
+      cmd = vim.o.shell,
       direction = direction,
       hidden = true,
     })
