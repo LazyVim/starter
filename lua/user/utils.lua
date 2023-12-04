@@ -52,4 +52,34 @@ function M.get_values(t, key)
   return values
 end
 
+function M.contains(table, val)
+  for i = 1, #table do
+    if table[i] == val then
+      return true
+    end
+  end
+  return false
+end
+
+M.os = {}
+
+function M.os.name()
+  -- Unix, Linux variants
+  local fh, err = assert(io.popen("uname -o 2>/dev/null", "r"))
+  if fh then
+    return fh:read()
+  end
+  return "Windows"
+end
+
+function M.os.home()
+  if M.os.name() == "Windows" then
+    return os.getenv("UserProfile")
+  elseif M.contains({ "Linux", "GNU/Linux", "Darwin" }, M.os.name()) then
+    return os.getenv("HOME")
+  else
+    return "", false
+  end
+end
+
 return M
