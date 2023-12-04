@@ -5,20 +5,20 @@ return {
     config = true,
     keys = {
       -- horizontal bash
-      { "<leader>th", "<cmd>lua TermToggleBash('horizontal')<cr>", desc = "H-Bash" },
+      { "<leader>th", "<cmd>lua TermToggleShell('horizontal')<cr>", desc = "H-Shell" },
       {
         "<a-1>",
         mode = { "n", "v", "t" },
-        "<cmd> lua TermToggleBash('horizontal')<cr>",
-        desc = "H-Bash",
+        "<cmd> lua TermToggleShell('horizontal')<cr>",
+        desc = "H-Shell",
       },
       -- float bash
-      { "<leader>tf", "<cmd>lua TermToggleBash('float')<cr>", desc = "Bash" },
+      { "<leader>tf", "<cmd>lua TermToggleShell('float')<cr>", desc = "Shell" },
       {
         "<a-2>",
         mode = { "n", "v", "t" },
-        "<cmd> lua TermToggleBash('float')<cr>",
-        desc = "Bash",
+        "<cmd> lua TermToggleShell('float')<cr>",
+        desc = "Shell",
       },
       -- containers
       { "<leader>tc", "<cmd>lua TermToggleContainer('float')<cr>", desc = "Container" },

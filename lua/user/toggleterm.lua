@@ -108,7 +108,7 @@ local function get_containers()
   return hosts
 end
 
-local bash = {
+local shells = {
   float = {
     term = nil,
     size = -1,
@@ -123,10 +123,10 @@ local bash = {
   },
 }
 
-function TermToggleBash(direction)
+function TermToggleShell(direction)
   direction = direction or "float"
-  if bash[direction].term == nil then
-    bash[direction].term = Terminal:new({
+  if shells[direction].term == nil then
+    shells[direction].term = Terminal:new({
       id = next_id(),
       display_name = vim.o.shell .. ":" .. direction,
       cmd = vim.o.shell,
@@ -134,7 +134,7 @@ function TermToggleBash(direction)
       hidden = true,
     })
   end
-  bash[direction].term:toggle(bash[direction].size, direction)
+  shells[direction].term:toggle(shells[direction].size, direction)
 end
 
 local lazygit = nil
@@ -148,7 +148,7 @@ end
 local lua = nil
 function TermToggleLua()
   if lua == nil then
-    lua = Terminal:new({ id = next_id(), display_name = "Lua", cmd = "lua", hidden = true })
+    lua = Terminal:new({ id = next_id(), display_name = "Lua", cmd = "lua54", hidden = true })
   end
   lua:toggle()
 end
