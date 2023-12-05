@@ -66,7 +66,7 @@ M.os = {}
 function M.os.name()
   -- Unix, Linux variants
   local fh, err = assert(io.popen("uname -o 2>/dev/null", "r"))
-  if fh then
+  if err ~= nil and fh then
     return fh:read()
   end
   return "Windows"
@@ -80,6 +80,18 @@ function M.os.home()
   else
     return "", false
   end
+end
+
+M.os.path = {}
+
+function M.os.path.join(t)
+  local sep = nil
+  if M.os.name() == "Windows" then
+    sep = "\\"
+  else
+    sep = "/"
+  end
+  return table.concat(t, sep)
 end
 
 return M

@@ -54,7 +54,7 @@ end
 
 local function get_ssh_hosts(path)
   local hosts = {}
-  path = path or utils.os.home() .. "/.ssh/config"
+  path = path or utils.os.path.join({ utils.os.home(), ".ssh", "config" })
 
   if type(path) ~= "string" then
     print("expected arg path of type 'string' actual  '" .. type(path))
