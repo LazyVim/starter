@@ -25,11 +25,13 @@ return {
     },
   },
   {
-    "folke/zen-mode.nvim",
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    },
+    "craftzdog/solarized-osaka.nvim",
+    lazy = true,
+    priority = 1000,
+    opt = function()
+      return {
+        transparent = true,
+      }
+    end,
   },
 }
