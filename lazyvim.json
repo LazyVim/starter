@@ -1,0 +1,9 @@
+{
+  "extras": [
+    "lazyvim.plugins.extras.formatting.prettier"
+  ],
+  "news": {
+    "NEWS.md": "2123"
+  },
+  "version": 3
+}
