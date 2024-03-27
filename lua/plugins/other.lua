@@ -1,9 +1,4 @@
 return {
-    -- {
-    --     'neoclide/coc.nvim',
-    --     branch = 'master',
-    --     build = "yarn install --frozen-lockfile",
-    -- },
     {
         'onns/bookmarks.nvim',
         keys = {},
@@ -14,24 +9,6 @@ return {
             require("telescope").load_extension("bookmarks")
         end
     },
-    -- {
-    --     "scrooloose/nerdtree",
-    --     keys = {
-    --         {
-    --             "<leader>e",
-    --             "<cmd>NERDTreeToggle<cr>",
-    --             desc = "NERDTreeToggle"
-    --         },
-    --         {
-    --             "<leader>v",
-    --             "<cmd>NERDTreeFind<cr>",
-    --             desc = "NERDTreeFind"
-    --         }
-    --     },
-    --     config = function()
-    --         require("neo-tree").setup()
-    --     end
-    -- },
     {
         "git@github.com:navarasu/onedark.nvim.git",
         lazy = false,
