@@ -1,9 +1,12 @@
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 return {
-  "jose-elias-alvarez/null-ls.nvim",
+  "nvimtools/none-ls.nvim",
   opts = function(_, opts)
-    local nls = require("null-ls")
+    local nls = require("none-ls")
+    opts.sources = vim.list_extend(opts.sources or {}, {
+      nls.builtins.diagnostics.markdownlint,
+    })
     -- table.insert(opts.sources, nls.builtins.formatting.prettierd)
   end,
   config = {

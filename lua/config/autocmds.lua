@@ -5,6 +5,6 @@
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
   pattern = { "*.html", "*.tsx", "*.jsx" },
   callback = function(_)
-    vim.cmd("InlineFoldActivate")
+    vim.cmd("InlineFoldToggle")
   end,
 })

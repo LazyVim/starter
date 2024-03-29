@@ -7,8 +7,9 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-vim.g.foldmethod = "expr"
-vim.g.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldmethod = "manual"
+-- vim.g.foldmethod = "manual"
+-- vim.g.foldexpr = "nvim_treesitter#foldexpr()"
 -- vim.opt.foldenable = false
 
 vim.opt.tabstop = 2
