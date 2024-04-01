@@ -29,6 +29,7 @@ return {
                 "go",
                 "http",
                 "sql",
+                "graphql",
             },
         },
     },

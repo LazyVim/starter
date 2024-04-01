@@ -24,7 +24,7 @@ function SaveHttpResp()
 end
 
 vim.api.nvim_set_keymap('n', '<leader>rr',
-    ":lua require('rest-nvim').run()<CR>",
+    "<cmd>Rest run<cr>",
     { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n', '<leader>rs',
