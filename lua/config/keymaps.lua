@@ -114,65 +114,6 @@ vim.api.nvim_set_keymap(
   { noremap = true, silent = true }
 )
 
-function TodoTelescopeWithCWD()
-  local pwd = vim.fn.getcwd()
-  local goplsRootDir = GetGoplsRootDir()
-  if goplsRootDir then
-    pwd = goplsRootDir
-  end
-  print("TodoTelescope at : " .. pwd)
-  vim.cmd("TodoTelescope cwd=" .. pwd)
-end
-
-vim.api.nvim_set_keymap("n", "<leader>fw", ":lua TodoTelescopeWithCWD()<CR>", { noremap = true })
-
--- 待定列表
-local targets = { "cmd", "CHANGELOG.md", "go.mod", ".git" }
-
--- 检查文件或目录是否存在
-local function file_exists(path)
-  local ok, err, code = os.rename(path, path)
-  if not ok then
-    if code == 13 then
-      -- Permission denied, but it exists
-      return true
-    end
-  end
-  return ok, err
-end
-
--- 从当前路径向上查找目标文件或目录
-local function find_upwards()
-  -- 获取当前文件的路径
-  local path = vim.fn.expand("%:p:h")
-
-  while path and path ~= "" do
-    -- 检查目标文件或目录是否在当前路径
-    for _, target in pairs(targets) do
-      local fullpath = path .. "/" .. target
-      if file_exists(fullpath) then
-        return path
-      end
-    end
-
-    -- 移动到上一级目录
-    path = vim.fn.fnamemodify(path, ":h")
-  end
-  return nil
-end
-
-function TodoTelescopeWithProject()
-  local pwd = vim.fn.getcwd()
-  local projectDir = find_upwards()
-  if projectDir then
-    pwd = projectDir
-  end
-  print("TodoTelescope at : " .. pwd)
-  vim.cmd("TodoTelescope cwd=" .. pwd)
-end
-
-vim.api.nvim_set_keymap("n", "<leader>fp", ":lua TodoTelescopeWithProject()<CR>", { noremap = true })
-
 function InsertGitBranch()
   local cwd = vim.fn.getcwd()
   local git_branch_cmd = "git -C " .. cwd .. " branch --show-current"
