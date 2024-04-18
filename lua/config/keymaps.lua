@@ -29,10 +29,10 @@ vim.api.nvim_set_keymap("n", "<leader>rr", "<cmd>Rest run<cr>", { noremap = true
 
 vim.api.nvim_set_keymap("n", "<leader>rs", ":lua SaveHttpResp()<CR>", { noremap = true, silent = true })
 
-function GetGoplsRootDir()
+function GetLSPRootDir()
   local clients = vim.lsp.get_active_clients()
   for _, client in ipairs(clients) do
-    if client.name == "gopls" and client.config.root_dir then
+    if client.config.root_dir then
       return client.config.root_dir
     end
   end
@@ -54,7 +54,7 @@ function GoToPathAndLine(input)
   -- if vim.g.WorkspaceFolders and #vim.g.WorkspaceFolders > 0 then
   --     pwd = vim.g.WorkspaceFolders[1]
   -- end
-  local goplsRootDir = GetGoplsRootDir()
+  local goplsRootDir = GetLSPRootDir()
   if goplsRootDir then
     pwd = goplsRootDir
   end
@@ -70,7 +70,7 @@ vim.api.nvim_set_keymap(
 
 function ExportExpandToClipboard()
   local pwd = vim.fn.getcwd()
-  local goplsRootDir = GetGoplsRootDir()
+  local goplsRootDir = GetLSPRootDir()
   if goplsRootDir then
     pwd = goplsRootDir
   end
@@ -124,10 +124,16 @@ function InsertGitBranch()
   if git_branch ~= "" then
     -- vim.api.nvim_put({ git_branch }, "", false, true)
     local line_num = vim.api.nvim_win_get_cursor(0)[1]
-    local todo_info = "// TODO: onns " .. git_branch .. " "
+    local todo_info = "TODO: onns " .. git_branch .. " "
     vim.api.nvim_buf_set_lines(0, line_num - 1, line_num - 1, false, { todo_info })
-    vim.api.nvim_command("startinsert")
-    vim.api.nvim_win_set_cursor(0, { line_num, #todo_info })
+    require('mini.comment').toggle_lines(line_num, line_num)
+    local buf = vim.api.nvim_get_current_buf() -- 获取当前缓冲区的句柄
+    local lines = vim.api.nvim_buf_get_lines(buf, line_num - 1, line_num, false)
+    if #lines > 0 then
+      local line_length = #lines[1]
+      vim.api.nvim_command("startinsert")
+      vim.api.nvim_win_set_cursor(0, { line_num, line_length })
+    end
   end
 end
 

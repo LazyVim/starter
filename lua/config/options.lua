@@ -6,7 +6,8 @@
 -- vim.opt.spell = true
 -- vim.opt.spelllang = "en_us"
 
-vim.g.go_fmt_command = "gofmt"
+vim.g.go_fmt_command = "gopls"
+vim.g.go_gopls_gofumpt = 1
 vim.g.go_fillstruct_mode = "gopls"
 vim.g.go_autodetect_gopath = 1
 vim.g.go_highlight_types = 1
@@ -32,8 +33,18 @@ vim.api.nvim_set_keymap("i", "<C-g> <esc>", ":<C-u>GoDeclsDir<CR>", { silent = t
 -- vim.api.nvim_set_keymap('n', 'gm', "<Plug>(coc-implementation)", { noremap = true, silent = true })
 
 -- tagbar 打开后自动聚焦
-vim.g.tagbar_autofocus = 1
+-- vim.g.tagbar_autofocus = 1
 
 vim.opt.wrap = true
 
 vim.g.startify_files_number = 20
+
+
+vim.opt.list = true
+vim.opt.listchars = {
+    tab = '▸\\ ', -- 设置Tab显示为一个小三角后跟一个空格
+    trail = '·', -- 设置行尾空格显示为中点
+    extends = '>', -- 当文本超出屏幕视图时在右边界显示
+    precedes = '<', -- 当文本超出屏幕视图时在左边界显示
+    nbsp = '␣' -- 不断行空格的显示
+}

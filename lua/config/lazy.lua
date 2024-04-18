@@ -60,13 +60,28 @@ require("gitsigns").setup({
 
 require("lspconfig").gopls.setup({
   cmd = { "gopls", "-remote=unix;/tmp/gopls-daemon-socket" },
+  settings = {
+    gopls = {
+      gofumpt = true
+    }
+  },
 })
 
-require("lspconfig").bufls.setup({})
+-- require("lspconfig").bufls.setup({})
 
 -- https://github.com/hrsh7th/nvim-cmp/issues/1809
 -- gopls 在返回提示词的时候随机选择，理论上应该默认选第一个
 local cmp = require("cmp")
 cmp.setup({
-  preselect = cmp.PreselectMode.None
+  preselect = cmp.PreselectMode.None,
+})
+
+-- 设置剪贴板使用系统剪贴板
+vim.opt.clipboard:append("unnamedplus")
+
+require("aerial").setup({
+  layout = {
+    min_width = 40,
+    max_width = { 60, 0.3 },
+  },
 })

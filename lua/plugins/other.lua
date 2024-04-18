@@ -2,6 +2,7 @@ return {
     {
         'onns/bookmarks.nvim',
         keys = {},
+        lazy = false,
         branch = 'main',
         dependencies = { 'nvim-web-devicons' },
         config = function()
@@ -26,12 +27,18 @@ return {
         "git@github.com:junegunn/fzf.git"
     },
     {
-        "git@github.com:majutsushi/tagbar.git",
+        'stevearc/aerial.nvim',
+        opts = {},
+        -- Optional dependencies
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter",
+            "nvim-tree/nvim-web-devicons"
+        },
         keys = {
             {
                 "<leader>t",
-                "<cmd>TagbarToggle<cr>",
-                desc = "TagbarToggle"
+                "<cmd>AerialToggle<cr>",
+                desc = "AerialToggle"
             }
         }
     },
@@ -43,5 +50,8 @@ return {
     },
     {
         'buoto/gotests-vim'
+    },
+    {
+        'tpope/vim-fugitive'
     },
 }
