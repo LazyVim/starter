@@ -39,6 +39,11 @@ return {
           end
         end, { "i", "s" }),
       })
+
+      opts.window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+      }
     end,
   },
 }
