@@ -12,3 +12,6 @@ map("n", "<leader>op", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- Markdown configs
 map("n", "<leader>ct", ":lua require('toggle-checkbox').toggle()<CR>", { desc = "Toggle Checkbox" })
+
+-- Git configs
+map("n", "<leader>gb", "<CMD>GitBlameToggle<CR>", { desc = "Toggle Git Blame" })
