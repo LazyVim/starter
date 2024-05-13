@@ -1,4 +1,6 @@
 return {
-  "f-person/git-blame.nvim",
-  opts = {},
+  {
+    "f-person/git-blame.nvim",
+    opts = {},
+  },
 }

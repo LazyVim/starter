@@ -1,3 +1,5 @@
 return {
-  "Darazaki/indent-o-matic",
+  {
+    "Darazaki/indent-o-matic",
+  },
 }
