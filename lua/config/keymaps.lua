@@ -4,6 +4,9 @@
 
 local map = vim.keymap.set
 
+-- Global keymaps
+map({ "n", "i", "v" }, ";", ":", { desc = "Remap command key", noremap = true })
+
 -- Oil Nvim
 map("n", "<leader>op", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
