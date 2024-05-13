@@ -5,10 +5,10 @@
 local map = vim.keymap.set
 
 -- Global keymaps
-map({ "n", "i", "v" }, ";", ":", { desc = "Remap command key", noremap = true })
+map({ "n", "v" }, ";", ":", { desc = "Enter command mode", noremap = true, nowait = true })
 
--- Oil Nvim
+-- File management Nvim
 map("n", "<leader>op", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
--- Markdown related
+-- Markdown configs
 map("n", "<leader>ct", ":lua require('toggle-checkbox').toggle()<CR>", { desc = "Toggle Checkbox" })
