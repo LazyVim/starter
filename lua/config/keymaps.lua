@@ -18,6 +18,20 @@ end, { desc = "Go to declaration" })
 
 -- Markdown configs
 map("n", "<leader>ct", ":lua require('toggle-checkbox').toggle()<CR>", { desc = "Toggle Checkbox" })
+map("n", "<leader>pb", ":lua require('gitpad').toggle_gitpad_branch()", { desc = "Toogle Gitpad branch" })
+map("n", "<leader>pd", function()
+  local date_filename = "daily-" .. os.date("%Y-%m-%d.md")
+  require("gitpad").toggle_gitpad({ filename = date_filename }) -- or require('gitpad').toggle_gitpad({ filename = date_filename, title = 'Daily notes' })
+end, { desc = "Toogle Gitpad Daily notes" })
+map("n", "<leader>pf", function()
+  local filename = vim.fn.expand("%:p") -- or just use vim.fn.bufname()
+  if filename == "" then
+    vim.notify("empty bufname")
+    return
+  end
+  filename = vim.fn.pathshorten(filename, 2) .. ".md"
+  require("gitpad").toggle_gitpad({ filename = filename }) -- or require('gitpad').toggle_gitpad({ filename = filename, title = 'Current file notes' })
+end, { desc = "Toogle Gitpad per file notes" })
 
 -- Git configs
 map("n", "<leader>gb", "<CMD>GitBlameToggle<CR>", { desc = "Toggle Git Blame" })
