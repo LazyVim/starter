@@ -35,3 +35,12 @@ end, { desc = "Toogle Gitpad per file notes" })
 
 -- Git configs
 map("n", "<leader>gb", "<CMD>GitBlameToggle<CR>", { desc = "Toggle Git Blame" })
+
+-- Development config
+map("x", "<leader>re", ":Refactor extract ", { desc = "Refactor Extract" })
+map("x", "<leader>rf", ":Refactor extract_to_file ", { desc = "Refactor Extract to file" })
+map("x", "<leader>rv", ":Refactor extract_var ", { desc = "Refactor Extract variable" })
+map({ "n", "x" }, "<leader>ri", ":Refactor inline_var", { desc = "Refactor Extract inline variable" })
+map("n", "<leader>rI", ":Refactor inline_func", { desc = "Refactor Extract inline function" })
+map("n", "<leader>rb", ":Refactor extract_block", { desc = "Refactor Extract block" })
+map("n", "<leader>rbf", ":Refactor extract_block_to_file", { desc = "Refactor Extract block  o file" })
