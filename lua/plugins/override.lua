@@ -33,6 +33,9 @@ return {
     "hrsh7th/nvim-cmp",
     opts = {
       window = {
+        documentation = {
+          border = "rounded",
+        },
         completion = {
           border = "rounded",
         },
