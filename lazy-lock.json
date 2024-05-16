@@ -20,6 +20,7 @@
   "edgy.nvim": { "branch": "main", "commit": "de79b7d92a5979cd71a9a1d8b6282515345e5055" },
   "everforest-nvim": { "branch": "main", "commit": "5e0e32a569fb464911342f0d421721cc1c94cf25" },
   "flit.nvim": { "branch": "main", "commit": "56490317983218b09698f8c960c3669958b12b32" },
+  "flutter-tools.nvim": { "branch": "main", "commit": "f04131d6b2c82c2a7624a8843642d6269b50b437" },
   "friendly-snippets": { "branch": "main", "commit": "3e9a3f5a0cfcef1741e352c37bda4e82e5eb846a" },
   "git-blame.nvim": { "branch": "master", "commit": "fb84fad97cd4b51caee3c865e8a33a0d413b77a8" },
   "gitpad.nvim": { "branch": "main", "commit": "0c06ade8876fac93369183341d6d7125b859071b" },
