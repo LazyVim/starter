@@ -12,12 +12,6 @@ map("n", "<leader>uh", "<CMD>HighlightColors Toggle<CR>", { desc = "Toggle highl
 
 -- File management Nvim
 map("n", "<leader>op", "<CMD>Oil<CR>", { desc = "Open parent directory" })
-map({ "n", "i", "v" }, "<f12>", function()
-  vim.lsp.buf.definition()
-end, { desc = "Go to definition" })
-map({ "n", "i", "v" }, "<F12>", function()
-  vim.lsp.buf.declaration()
-end, { desc = "Go to declaration" })
 
 -- Markdown configs
 map("n", "<leader>ct", ":lua require('toggle-checkbox').toggle()<CR>", { desc = "Toggle Checkbox" })
@@ -40,6 +34,13 @@ end, { desc = "Toogle Gitpad per file notes" })
 map("n", "<leader>gb", "<CMD>GitBlameToggle<CR>", { desc = "Toggle Git Blame" })
 
 -- Development config
+map({ "n", "i", "v" }, "<f12>", function()
+  vim.lsp.buf.definition()
+end, { desc = "Go to definition" })
+map({ "n", "i", "v" }, "<F12>", function()
+  vim.lsp.buf.declaration()
+end, { desc = "Go to declaration" })
+map({ "n", "i", "v" }, "<leader>rcf", "<CMD>Telescope flutter commands<CR>", { desc = "Run flutter" })
 map("x", "<leader>re", ":Refactor extract ", { desc = "Refactor Extract" })
 map("x", "<leader>rf", ":Refactor extract_to_file ", { desc = "Refactor Extract to file" })
 map("x", "<leader>rv", ":Refactor extract_var ", { desc = "Refactor Extract variable" })
