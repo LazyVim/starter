@@ -1,4 +1,5 @@
 return {
+  -- Misc
   {
     "ThePrimeagen/refactoring.nvim",
     lazy = true,
@@ -8,6 +9,7 @@ return {
       "nvim-treesitter/nvim-treesitter",
     },
   },
+  -- TS / JS
   {
     "dmmulroy/tsc.nvim",
     lazy = true,
@@ -17,12 +19,29 @@ return {
     },
   },
   {
+    "dmmulroy/ts-error-translator.nvim",
+    lazy = true,
+    event = "LazyFile",
+    ft = { "ts", "tsx" },
+  },
+  -- C#
+  {
+    "iabdelkareem/csharp.nvim",
+    lazy = true,
+    event = "VeryLazy",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "mfussenegger/nvim-dap",
+      "Tastyep/structlog.nvim",
+    },
+  },
+  -- Flutter
+  {
     "akinsho/flutter-tools.nvim",
     lazy = true,
     ft = "dart",
     dependencies = {
       "nvim-lua/plenary.nvim",
-      "stevearc/dressing.nvim", -- optional for vim.ui.select
     },
     config = function()
       require("telescope").load_extension("flutter")
