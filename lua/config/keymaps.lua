@@ -7,6 +7,9 @@ local map = vim.keymap.set
 -- Global keymaps
 map({ "n", "v" }, ";", ":", { desc = "Enter command mode", noremap = true, nowait = true })
 
+-- Theme
+map("n", "<leader>uh", "<CMD>HighlightColors Toggle<CR>", { desc = "Toggle highlighting color", nowait = true })
+
 -- File management Nvim
 map("n", "<leader>op", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 map({ "n", "i", "v" }, "<f12>", function()
