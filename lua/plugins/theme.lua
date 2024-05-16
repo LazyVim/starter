@@ -8,12 +8,11 @@ return {
     config = function() end,
   },
   {
-    "brenoprata10/nvim-highlight-colors",
+    "NvChad/nvim-colorizer.lua",
     lazy = true,
     event = "VeryLazy",
     opts = {
-      enable_named_color = true,
-      enable_tailwind = true,
+      tailwind = true,
     },
   },
 }
