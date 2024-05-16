@@ -13,9 +13,9 @@ return {
   },
   {
     "3rd/image.nvim",
+    lazy = true,
+    event = "VeryLazy",
     dependencies = { "luarocks.nvim" },
-    config = function()
-      -- ...
-    end,
+    opts = {},
   },
 }
