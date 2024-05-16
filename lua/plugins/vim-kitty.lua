@@ -1,0 +1,3 @@
+return {
+  "fladson/vim-kitty",
+}
