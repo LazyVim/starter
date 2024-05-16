@@ -9,6 +9,14 @@ return {
     },
   },
   {
+    "dmmulroy/tsc.nvim",
+    lazy = true,
+    cmd = "TSC",
+    opts = {
+      use_trouble_qflist = true,
+    },
+  },
+  {
     "akinsho/flutter-tools.nvim",
     lazy = true,
     ft = "dart",
