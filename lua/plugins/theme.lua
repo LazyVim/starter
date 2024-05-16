@@ -7,4 +7,10 @@ return {
     },
     config = function() end,
   },
+  {
+    "brenoprata10/nvim-highlight-colors",
+    lazy = true,
+    event = "VeryLazy",
+    opts = {},
+  },
 }
