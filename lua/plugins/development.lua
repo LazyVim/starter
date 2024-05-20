@@ -1,4 +1,25 @@
 return {
+  -- Overall
+  {
+    "Zeioth/compiler.nvim",
+    cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
+    dependencies = {
+      "stevearc/overseer.nvim",
+    },
+    opts = {},
+  },
+  {
+    "stevearc/overseer.nvim",
+    cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
+    opts = {
+      task_list = {
+        direction = "bottom",
+        min_height = 25,
+        max_height = 25,
+        default_detail = 1,
+      },
+    },
+  },
   -- TS / JS
   {
     "dmmulroy/tsc.nvim",
@@ -14,28 +35,5 @@ return {
     lazy = true,
     event = "LazyFile",
     ft = { "ts", "tsx" },
-  },
-  -- C#
-  {
-    "iabdelkareem/csharp.nvim",
-    lazy = true,
-    event = "BufReadPre",
-    dependencies = {
-      "williamboman/mason.nvim",
-      "mfussenegger/nvim-dap",
-      "Tastyep/structlog.nvim",
-    },
-  },
-  -- Flutter
-  {
-    "akinsho/flutter-tools.nvim",
-    lazy = true,
-    ft = "dart",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
-    config = function()
-      require("telescope").load_extension("flutter")
-    end,
   },
 }
