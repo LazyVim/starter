@@ -26,4 +26,9 @@ return {
   --     enable_tailwind = true,
   --   },
   -- },
+  {
+    "kevinhwang91/nvim-ufo",
+    lazy = true,
+    event = "VeryLazy",
+  },
 }
