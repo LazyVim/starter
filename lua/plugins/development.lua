@@ -1,18 +1,9 @@
 return {
-  -- Misc
-  {
-    "ThePrimeagen/refactoring.nvim",
-    lazy = true,
-    cmd = "Refactor",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-    },
-  },
   -- TS / JS
   {
     "dmmulroy/tsc.nvim",
     lazy = true,
+    event = "BufReadPre",
     cmd = "TSC",
     opts = {
       use_trouble_qflist = true,
@@ -28,7 +19,7 @@ return {
   {
     "iabdelkareem/csharp.nvim",
     lazy = true,
-    event = "VeryLazy",
+    event = "BufReadPre",
     dependencies = {
       "williamboman/mason.nvim",
       "mfussenegger/nvim-dap",
