@@ -19,7 +19,7 @@ return {
   {
     "brenoprata10/nvim-highlight-colors",
     lazy = true,
-    event = "VeryLazy",
+    event = "BufReadPre",
     opts = {
       render = "virtual",
       virtual_symbol = "",
@@ -29,6 +29,6 @@ return {
   {
     "kevinhwang91/nvim-ufo",
     lazy = true,
-    event = "VeryLazy",
+    event = "BufReadPre",
   },
 }
