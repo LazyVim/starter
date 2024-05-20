@@ -29,7 +29,6 @@
   "indent-o-matic": { "branch": "master", "commit": "4d11e98f523d3c4500b1dc33f0d1a248a4f69719" },
   "instant.nvim": { "branch": "master", "commit": "294b6d08143b3db8f9db7f606829270149e1a786" },
   "lazy.nvim": { "branch": "main", "commit": "758bb5de98b805acc5eeed8cdc8ac7f0bc4b0b86" },
-  "leap.nvim": { "branch": "main", "commit": "b1ecfb63c0b8babfd0dcd6b5ca6de37bbf3526cd" },
   "leap.nvim": { "branch": "main", "commit": "8f4d3ab9fe5c906c5745150191831c5ee0a427a0" },
   "leetcode.nvim": { "branch": "master", "commit": "458da8ea7e73e8ed221165aa56a595e33c4ec644" },
   "lualine.nvim": { "branch": "master", "commit": "0a5a66803c7407767b799067986b4dc3036e1983" },
