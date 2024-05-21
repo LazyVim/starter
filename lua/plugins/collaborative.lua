@@ -1,7 +1,6 @@
 return {
   {
     "jbyuki/instant.nvim",
-    lazy = true,
     cmd = {
       "InstantStartServer",
       "InstantStopServer",
@@ -9,7 +8,6 @@ return {
   },
   {
     "mistricky/codesnap.nvim",
-    lazy = true,
     build = "make",
     cmd = {
       "CodeSnap",

@@ -2,7 +2,6 @@ return {
   -- Overall
   {
     "Zeioth/compiler.nvim",
-    lazy = true,
     cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
     dependencies = {
       "stevearc/overseer.nvim",
@@ -11,7 +10,6 @@ return {
   },
   {
     "stevearc/overseer.nvim",
-    lazy = true,
     cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
     opts = {
       task_list = {
@@ -25,7 +23,6 @@ return {
   -- TS / JS
   {
     "dmmulroy/tsc.nvim",
-    lazy = true,
     cmd = "TSC",
     opts = {
       use_trouble_qflist = true,
@@ -33,7 +30,6 @@ return {
   },
   {
     "dmmulroy/ts-error-translator.nvim",
-    lazy = true,
     ft = { "ts", "tsx" },
   },
 }
