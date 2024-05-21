@@ -1,7 +1,6 @@
 return {
   {
     "neanias/everforest-nvim",
-    lazy = true,
     opts = {
       background = "medium",
     },
@@ -18,7 +17,6 @@ return {
   -- },
   {
     "brenoprata10/nvim-highlight-colors",
-    lazy = true,
     event = "BufReadPre",
     opts = {
       render = "virtual",
@@ -28,7 +26,6 @@ return {
   },
   {
     "kevinhwang91/nvim-ufo",
-    lazy = true,
     event = "BufReadPre",
   },
 }

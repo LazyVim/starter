@@ -1,12 +1,10 @@
 return {
   {
     "opdavies/toggle-checkbox.nvim",
-    lazy = true,
     ft = "markdown",
   },
   {
     "yujinyuz/gitpad.nvim",
-    lazy = true,
     opts = {
       title = "Note",
       border = "rounded",
@@ -15,7 +13,6 @@ return {
   },
   {
     "jmbuhr/otter.nvim",
-    lazy = true,
     ft = "markdown",
     dependencies = {
       "hrsh7th/nvim-cmp", -- optional, for completion
@@ -25,11 +22,11 @@ return {
   },
   {
     "3rd/image.nvim",
-    lazy = true,
     ft = { "markdown", "quarto", "vimwiki" },
     dependencies = {
       {
         "vhyrro/luarocks.nvim",
+        lazy = true,
         priority = 1001,
         opts = {
           rocks = { "magick" },
