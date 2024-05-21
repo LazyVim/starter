@@ -6,15 +6,6 @@ return {
     },
     config = function() end,
   },
-  -- Disabled by conflict with neotree
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   lazy = true,
-  --   event = "VeryLazy",
-  --   opts = {
-  --     tailwind = true,
-  --   },
-  -- },
   {
     "brenoprata10/nvim-highlight-colors",
     event = "BufReadPre",
