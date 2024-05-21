@@ -18,7 +18,7 @@ return {
       has_line_number = true,
       watermark = "• FM39hz •",
       bg_color = "#535c68",
-      code_font_family = "JetbrainsMono Nerd Font Bold",
+      code_font_family = "JetbrainsMono Nerd Font",
     },
   },
 }
