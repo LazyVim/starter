@@ -59,4 +59,13 @@ return {
       },
     },
   },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    dependencies = "MunifTanjim/nui.nvim",
+    version = "*",
+    opts = {
+      auto_clean_after_session_restore = true,
+      close_if_last_window = true,
+    },
+  },
 }
