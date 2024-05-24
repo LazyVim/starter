@@ -4,18 +4,20 @@
 
 local map = vim.keymap.set
 
--- Global keymaps
+-- Essential
 map({ "n", "v" }, ";", ":", { desc = "Enter command mode", noremap = true, nowait = true })
 
 -- Theme
 map("n", "<leader>uh", "<CMD>HighlightColors Toggle<CR>", { desc = "Toggle highlighting color", nowait = true })
 
--- File management Nvim
+-- File management
 map("n", "<leader>op", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
--- Markdown configs
+-- Markdown
 map("n", "<leader>ct", ":lua require('toggle-checkbox').toggle()<CR>", { desc = "Toggle Checkbox" })
-map("n", "<leader>pb", ":lua require('gitpad').toggle_gitpad_branch()", { desc = "Toogle Gitpad branch" })
+map("n", "<leader>pb", function()
+  require("gitpad").toggle_gitpad_branch()
+end, { desc = "Toogle Gitpad branch" })
 map("n", "<leader>pd", function()
   local date_filename = "daily-" .. os.date("%Y-%m-%d.md")
   require("gitpad").toggle_gitpad({ filename = date_filename }) -- or require('gitpad').toggle_gitpad({ filename = date_filename, title = 'Daily notes' })
@@ -30,10 +32,10 @@ map("n", "<leader>pf", function()
   require("gitpad").toggle_gitpad({ filename = filename }) -- or require('gitpad').toggle_gitpad({ filename = filename, title = 'Current file notes' })
 end, { desc = "Toogle Gitpad per file notes" })
 
--- Git configs
+-- Git
 map("n", "<leader>gb", "<CMD>GitBlameToggle<CR>", { desc = "Toggle Git Blame" })
 
--- Development config
+-- Development
 map({ "n", "i", "v" }, "<f12>", function()
   vim.lsp.buf.definition()
 end, { desc = "Go to definition" })
