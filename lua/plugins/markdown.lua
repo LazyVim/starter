@@ -21,24 +21,29 @@ return {
     },
   },
   {
+    "vhyrro/luarocks.nvim",
+    lazy = true,
+    priority = 1001,
+    opts = {
+      rocks = { "magick" },
+    },
+  },
+  {
+    "nvim-neorg/neorg",
+    dependencies = { "luarocks.nvim" },
+    lazy = false,
+    version = "*",
+  },
+  {
     "3rd/image.nvim",
     ft = { "markdown", "quarto", "vimwiki" },
-    dependencies = {
-      {
-        "vhyrro/luarocks.nvim",
-        lazy = true,
-        priority = 1001,
-        opts = {
-          rocks = { "magick" },
-        },
-      },
-    },
+    dependencies = { "luarocks.nvim" },
     opts = {
       backend = "kitty",
       integrations = {
         markdown = {
           enabled = true,
-          only_render_image_at_cursor = true,
+          only_render_image_at_cursor = false,
           filetypes = { "markdown", "vimwiki", "quarto" },
         },
       },
