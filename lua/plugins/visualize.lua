@@ -16,6 +16,10 @@ return {
     },
   },
   {
+    "HiPhish/rainbow-delimiters.nvim",
+    event = "BufReadPre",
+  },
+  {
     "kevinhwang91/nvim-ufo",
     event = "BufReadPre",
   },
