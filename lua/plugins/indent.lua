@@ -1,6 +1,6 @@
 return {
-  {
-    "Darazaki/indent-o-matic",
-    event = "BufReadPre",
-  },
+	{
+		"Darazaki/indent-o-matic",
+		event = "BufReadPre",
+	},
 }
