@@ -68,6 +68,14 @@ return {
 		},
 	},
 	{
+		"nvim-lualine/lualine.nvim",
+		sections = {
+			lualine_z = {
+				require("auto-session.lib").current_session_name,
+			},
+		},
+	},
+	{
 		"nvim-neo-tree/neo-tree.nvim",
 		dependencies = "MunifTanjim/nui.nvim",
 		version = "*",
