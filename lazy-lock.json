@@ -21,7 +21,6 @@
   "everforest-nvim": { "branch": "main", "commit": "ed4ba26c911696d69cfda26014ec740861d324e1" },
   "flit.nvim": { "branch": "main", "commit": "56490317983218b09698f8c960c3669958b12b32" },
   "friendly-snippets": { "branch": "main", "commit": "d0610077b6129cf9f7f78afbe3a1425d60f6e2f1" },
-  "garbage-day.nvim": { "branch": "main", "commit": "dcadabd7e5f371c827d59d84b7fd63d9893370ac" },
   "git-blame.nvim": { "branch": "master", "commit": "408d5487d908dfe5d48e5645d8b27ddcc16b11e0" },
   "gitpad.nvim": { "branch": "main", "commit": "9685127c3795821bdbd3dab5a5fee4422255a102" },
   "harpoon": { "branch": "harpoon2", "commit": "0378a6c428a0bed6a2781d459d7943843f374bce" },
