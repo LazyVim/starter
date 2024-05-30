@@ -35,6 +35,11 @@ return {
 		},
 	},
 	{
+		"Redoxahmii/json-to-types.nvim",
+		cmd = { "ConvertJSONtoTS", "ConvertJSONtoTSBuffer" },
+		ft = { "ts", "tsx" },
+	},
+	{
 		"dmmulroy/ts-error-translator.nvim",
 		ft = { "ts", "tsx" },
 	},
