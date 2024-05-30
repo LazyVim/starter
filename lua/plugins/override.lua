@@ -15,6 +15,7 @@ local logo = [[
    ░   ░ ░    ░   ░ ░ ░ ▒                                           ░░   ▒ ░░      ░    
          ░    ░  ░    ░ ░                                            ░   ░         ░    
                                                                     ░                   ]]
+local section = require("alpha.themes.dashboard").section
 return {
 	{
 		"catppuccin/nvim",
@@ -36,6 +37,16 @@ return {
 			section = {
 				header = {
 					val = vim.split(logo, "\n"),
+				},
+			},
+			opts = {
+				layout = {
+					{ type = "padding", val = 3 },
+					section.header,
+					{ type = "padding", val = 2 },
+					section.buttons,
+					{ type = "padding", val = 3 },
+					section.footer,
 				},
 			},
 		},
