@@ -22,7 +22,7 @@ return {
 	},
 	{
 		"zeioth/garbage-day.nvim",
-		event = "VeryLazy",
+		event = "LspAttach",
 		dependencies = "neovim/nvim-lspconfig",
 		opts = {},
 	},
@@ -33,14 +33,35 @@ return {
 		opts = {
 			use_trouble_qflist = true,
 		},
+		ft = {
+			"typescript",
+			"typescriptreact",
+		},
 	},
 	{
 		"Redoxahmii/json-to-types.nvim",
 		cmd = { "ConvertJSONtoTS", "ConvertJSONtoTSBuffer" },
-		ft = { "ts", "tsx" },
+		build = "sh install.sh bun",
+		ft = {
+			"typescript",
+			"typescriptreact",
+		},
+	},
+	{
+		"barrett-ruth/import-cost.nvim",
+		build = "sh install.sh bun",
+		ft = {
+			"javascript",
+			"javascriptreact",
+			"typescript",
+			"typescriptreact",
+		},
 	},
 	{
 		"dmmulroy/ts-error-translator.nvim",
-		ft = { "ts", "tsx" },
+		ft = {
+			"typescript",
+			"typescriptreact",
+		},
 	},
 }
