@@ -20,12 +20,12 @@ return {
 			},
 		},
 	},
-	-- {
-	-- 	"zeioth/garbage-day.nvim",
-	-- 	event = "LspAttach",
-	-- 	dependencies = "neovim/nvim-lspconfig",
-	-- 	opts = {},
-	-- },
+	{
+		"zeioth/garbage-day.nvim",
+		event = "LspAttach",
+		dependencies = "neovim/nvim-lspconfig",
+		opts = {},
+	},
 	-- TS / JS
 	{
 		"dmmulroy/tsc.nvim",
