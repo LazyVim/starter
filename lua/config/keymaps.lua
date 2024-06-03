@@ -37,12 +37,6 @@ end, { desc = "Toogle Gitpad per file notes" })
 map("n", "<leader>gb", "<CMD>GitBlameToggle<CR>", { desc = "Toggle Git Blame" })
 
 -- Development
-map({ "n", "i", "v" }, "<f12>", function()
-	vim.lsp.buf.definition()
-end, { desc = "Go to definition" })
-map({ "n", "i", "v" }, "<S-f12>", function()
-	vim.lsp.buf.declaration()
-end, { desc = "Go to declaration" })
 map("n", "<F6>", "<CMD>CompilerOpen<CR>", { desc = "Open compiler" })
 map("n", "<S-F6>", "<CMD>CompilerRedo<CR>", { desc = "Compiler redo" })
 map("n", "<S-F7>", "<CMD>CompilerToggleResults<CR>", { desc = "Compiler results" })
