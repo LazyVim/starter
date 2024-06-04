@@ -132,6 +132,13 @@ return {
 			stages = "fade_in_slide_out",
 		},
 	},
+	{
+		"nvimtools/none-ls.nvim",
+		opts = {
+			source = {
+				builtins = {
+					csharpier = {},
+				},
 			},
 		},
 	},
