@@ -41,11 +41,9 @@ return {
 			},
 			opts = {
 				layout = {
-					{ type = "padding", val = 3 },
 					section.header,
-					{ type = "padding", val = 2 },
+					{ type = "padding", val = 1 },
 					section.buttons,
-					{ type = "padding", val = 3 },
 					section.footer,
 				},
 			},
