@@ -33,10 +33,11 @@ map("n", "<leader>on", ":e ~/.tmp/notes/notes.md<cr>", { desc = "Open notes" })
 map("n", "<leader>con", ":e ~/.tmp/notes/notes.md<cr>", { desc = "Open notes" })
 
 map("n", "<leader>j", function()
-  CloseTerminalBuffer(true)
+  require("mj.utils").close_terminal_buffer(true)
 end, { desc = "Close terminal buffer (true)" })
+
 map("n", "<leader>k", function()
-  CloseTerminalBuffer(false)
+  require("mj.utils").close_terminal_buffer(false)
 end, { desc = "Close terminal buffer (false)" })
 
 -- Search mappings
@@ -65,7 +66,18 @@ end, { desc = "Previous alternative file" })
 vim.diagnostic.config({ virtual_text = false })
 
 -- Running tests
-map("n", "<Leader>T", ":lua RunTestFile()<CR>", { desc = "Run test file" })
-map("n", "<Leader>t", ":lua RunTestLineByLine()<CR>", { desc = "Run test for current line" })
-map("n", "<Leader>at", ":lua RunAllTests()<CR>", { desc = "Run all tests" })
-map("n", "s.t", ":lua RunShellTest()<CR>", { desc = "Run ./shell_test" })
+map("n", "<Leader><leader>at", function()
+  require("mj.test_runner").run_all_tests()
+end, { desc = "Run all tests" })
+
+map("n", "<Leader><leader>t", function()
+  require("mj.test_runner").test_line()
+end, { desc = "Run test for current line" })
+
+map("n", "<Leader>T", function()
+  require("mj.test_runner").run_test_file()
+end, { desc = "Run test file" })
+
+map("n", "<leader><leader>st", function()
+  require("mj.test_runner").run_shell_test()
+end, { desc = "Run ./shell_test" })
