@@ -135,7 +135,9 @@ return {
 		opts = {
 			source = {
 				builtins = {
-					csharpier = {},
+					csharpier = {
+						args = { "--write-stdout", "--no-cache", "$FILENAME" },
+					},
 				},
 			},
 		},
