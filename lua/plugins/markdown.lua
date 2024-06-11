@@ -21,6 +21,13 @@ return {
 		},
 	},
 	{
+		"sarrisv/readermode.nvim",
+		cmd = "ReaderMode",
+		opts = {
+			enabled = false,
+		},
+	},
+	{
 		"vhyrro/luarocks.nvim",
 		lazy = true,
 		priority = 1001,
