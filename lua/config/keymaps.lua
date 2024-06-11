@@ -32,6 +32,7 @@ map("n", "<leader>pf", function()
 	filename = vim.fn.pathshorten(filename, 2) .. ".md"
 	require("gitpad").toggle_gitpad({ filename = filename }) -- or require('gitpad').toggle_gitpad({ filename = filename, title = 'Current file notes' })
 end, { desc = "Toogle Gitpad per file notes" })
+map("n", "<leader>mr", "<CMD>ReaderMode<CR>", { desc = "Reader mode toggle" })
 
 -- Git
 map("n", "<leader>gb", "<CMD>GitBlameToggle<CR>", { desc = "Toggle Git Blame" })
