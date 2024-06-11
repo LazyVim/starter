@@ -4,10 +4,9 @@ return {
 		"neanias/everforest-nvim",
 		config = function()
 			require("everforest").setup({
-				background = "medium",
+				background = "soft",
 				italics = true,
-				ui_contrast = "low",
-				float_style = "dim",
+				ui_contrast = "high",
 				diagnostic_text_highlight = true,
 			})
 		end,
