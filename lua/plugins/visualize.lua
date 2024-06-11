@@ -1,13 +1,16 @@
+---@diagnostic disable: missing-fields
 return {
 	{
 		"neanias/everforest-nvim",
-		opts = {
-			background = "medium",
-			transparent_background_level = 2,
-			italics = true,
-			ui_contrast = "high",
-		},
-		config = function() end,
+		config = function()
+			require("everforest").setup({
+				background = "medium",
+				italics = true,
+				ui_contrast = "low",
+				float_style = "dim",
+				diagnostic_text_highlight = true,
+			})
+		end,
 	},
 	{
 		"brenoprata10/nvim-highlight-colors",
