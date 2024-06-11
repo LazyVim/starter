@@ -36,6 +36,7 @@ map("n", "<leader>mr", "<CMD>ReaderMode<CR>", { desc = "Reader mode toggle" })
 
 -- Git
 map("n", "<leader>gb", "<CMD>GitBlameToggle<CR>", { desc = "Toggle Git Blame" })
+map("n", "<leader>gS", "<CMD>Telescope git_submodules<CR>", { desc = "Show git submodules" })
 
 -- Development
 map("n", "<F6>", "<CMD>CompilerOpen<CR>", { desc = "Open compiler" })
