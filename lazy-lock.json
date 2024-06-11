@@ -94,6 +94,7 @@
   "refactoring.nvim": { "branch": "master", "commit": "d2786877c91aa409c824f27b4ce8a9f560dda60a" },
   "tailwindcss-colorizer-cmp.nvim": { "branch": "main", "commit": "3d3cd95e4a4135c250faf83dd5ed61b8e5502b86" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "9ef21b2e6bb6ebeaf349a0781745549bbb870d27" },
+  "telescope-git-submodules.nvim": { "branch": "main", "commit": "ece2164d0171d01f7396420df5ef1cf82a910b60" },
   "telescope-import.nvim": { "branch": "main", "commit": "baa2d50be46c769a1cc942a9d5be049f314f4206" },
   "telescope.nvim": { "branch": "master", "commit": "f12b15e1b3a33524eb06a1ae7bc852fb1fd92197" },
   "todo-comments.nvim": { "branch": "main", "commit": "9c104cf7868f1c739b43a07e5593666cc9de2d67" },
