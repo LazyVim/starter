@@ -3,6 +3,7 @@ return {
 		"neanias/everforest-nvim",
 		opts = {
 			background = "medium",
+			transparent_background_level = 2,
 			italics = true,
 			ui_contrast = "high",
 		},
