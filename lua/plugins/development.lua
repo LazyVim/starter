@@ -26,6 +26,13 @@ return {
 		dependencies = "neovim/nvim-lspconfig",
 		opts = {},
 	},
+	{
+		"piersolenski/telescope-import.nvim",
+		dependencies = { "nvim-telescope/telescope.nvim" },
+		config = function()
+			require("telescope").load_extension("import")
+		end,
+	},
 	-- TS / JS
 	{
 		"dmmulroy/tsc.nvim",
