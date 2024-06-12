@@ -156,11 +156,24 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
-    opts = function(_, opts)
-      table.insert(opts.sections.lualine_x, "😄")
+    config = function(_, opts)
+      table.insert(opts.sections.lualine_a,
+        function()
+          return "😄"
+        end
+      )
+
+      -- prepend
+      table.insert(opts.sections.lualine_z, 1, "location")
+
+      require('lualine').setup {
+        sections = {
+          lualine_a = opts.sections.lualine_a,
+          lualine_z = opts.sections.lualine_z,
+        }
+      }
     end,
   },
-
   -- or you can return new options to override all the defaults
   {
     "nvim-lualine/lualine.nvim",
