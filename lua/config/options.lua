@@ -5,6 +5,5 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.writebackup = false
 vim.opt.spelllang = { "en", "cjk" }
-local scrolloff = 3
-vim.opt.scrolloff = scrolloff
-vim.opt.scrolloff = vim.o.scrolloff == 3 and 999 or 3
+vim.o.scrolloff = 3
+vim.o.scrolloff = vim.o.scrolloff == 3 and 999 or 3
