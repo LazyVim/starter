@@ -6,6 +6,12 @@ local map = vim.keymap.set
 
 -- Essential
 map({ "n", "v" }, ";", ":", { desc = "Enter command mode", noremap = true, nowait = true })
+map(
+	{ "n", "v" },
+	"<leader>uP",
+	"<CMD>Precognition toggle<CR>",
+	{ desc = "Toggle Precognition", noremap = true, nowait = true }
+)
 
 -- Theme
 map("n", "<leader>uh", "<CMD>HighlightColors Toggle<CR>", { desc = "Toggle highlighting color", nowait = true })
