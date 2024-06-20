@@ -21,4 +21,10 @@ return {
 			code_font_family = "JetbrainsMono Nerd Font",
 		},
 	},
+	{
+		"miversen33/netman.nvim",
+		cmd = {
+			"Neotree remote",
+		},
+	},
 }
