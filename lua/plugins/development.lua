@@ -1,3 +1,4 @@
+require("dap.ext.vscode").load_launchjs()
 return {
 	-- Overall
 	{
@@ -10,7 +11,7 @@ return {
 	},
 	{
 		"stevearc/overseer.nvim",
-		cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
+		cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo", "OverseerRun" },
 		opts = {
 			task_list = {
 				direction = "bottom",
