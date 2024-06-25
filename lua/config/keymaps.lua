@@ -19,6 +19,7 @@ map("n", "<leader>uh", "<CMD>HighlightColors Toggle<CR>", { desc = "Toggle highl
 -- File management
 map("n", "<leader>op", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 map("n", "<C-_>", "<CMD>ToggleTerm direction=float<CR>", { desc = "Open Floating terminal" })
+map("n", "<C-/>", "<CMD>ToggleTerm direction=float<CR>", { desc = "Open Floating terminal" })
 
 -- Markdown
 map("n", "<leader>ct", ":lua require('toggle-checkbox').toggle()<CR>", { desc = "Toggle Checkbox" })
