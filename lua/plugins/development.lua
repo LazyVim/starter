@@ -72,28 +72,7 @@ return {
 			"typescriptreact",
 		},
 	},
-	-- LSP config
 	{
-		"mfussenegger/nvim-dap",
-		opts = {
-			adapters = {
-				godot = {
-					type = "server",
-					host = "127.0.0.1",
-					port = 6006,
-				},
-			},
-			configurations = {
-				cs = {
-					{
-						type = "godot",
-						request = "launch",
-						name = "Launch Scene",
-						project = "${workspaceFolder}",
-						launch_scene = true,
-					},
-				},
-			},
 		},
 	},
 }
