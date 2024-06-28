@@ -34,6 +34,9 @@ return {
 			require("telescope").load_extension("import")
 		end,
 	},
+	{
+		"Tastyep/structlog.nvim",
+	},
 	-- TS / JS
 	{
 		"dmmulroy/tsc.nvim",
@@ -72,7 +75,27 @@ return {
 			"typescriptreact",
 		},
 	},
+	-- C#
 	{
+		"iabdelkareem/csharp.nvim",
+		ft = "cs",
+		keys = {
+			{
+				"<F5>",
+				function()
+					require("csharp").debug_project()
+				end,
+				{ desc = "C# debug project", noremap = true, nowait = true },
+			},
 		},
+		dependencies = {
+			"williamboman/mason.nvim",
+			"mfussenegger/nvim-dap",
+			"Tastyep/structlog.nvim",
+		},
+		config = function()
+			require("mason").setup()
+			require("csharp").setup()
+		end,
 	},
 }
