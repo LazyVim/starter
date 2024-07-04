@@ -58,5 +58,20 @@ return {
 			max_height_window_percentage = 30,
 			kitty_method = "normal",
 		},
+		{
+			"epwalsh/obsidian.nvim",
+			ft = "markdown",
+			dependencies = {
+				"nvim-lua/plenary.nvim",
+			},
+			opts = {
+				workspaces = {
+					{
+						name = "Project Pillar",
+						path = "~/Workspace/Notes/Rouge Pillar/",
+					},
+				},
+			},
+		},
 	},
 }
