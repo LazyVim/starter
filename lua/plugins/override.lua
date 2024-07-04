@@ -136,18 +136,18 @@ return {
 			stages = "fade_in_slide_out",
 		},
 	},
-	{
-		"nvimtools/none-ls.nvim",
-		opts = {
-			source = {
-				builtins = {
-					csharpier = {
-						args = { "--write-stdout", "--no-cache", "$FILENAME" },
-					},
-				},
-			},
-		},
-	},
+	-- {
+	-- 	"nvimtools/none-ls.nvim",
+	-- 	opts = {
+	-- 		source = {
+	-- 			builtins = {
+	-- 				csharpier = {
+	-- 					args = { "--write-stdout", "--no-cache", "$FILENAME" },
+	-- 				},
+	-- 			},
+	-- 		},
+	-- 	},
+	-- },
 	{
 		"nvim-telescope/telescope.nvim",
 		opts = {
