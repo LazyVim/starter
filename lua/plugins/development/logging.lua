@@ -1,0 +1,5 @@
+return {
+  {
+    "Tastyep/structlog.nvim",
+  },
+}
