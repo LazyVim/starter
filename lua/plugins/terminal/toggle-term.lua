@@ -7,7 +7,7 @@ return {
 			title_pos = "left",
 			width = 128,
 			height = 16,
-			row = 1,
+			row = 0,
 		},
 		winbar = {
 			enabled = true,
