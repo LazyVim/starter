@@ -25,14 +25,14 @@ return {
   -- 		},
   -- 	},
   -- },
-  {
-    "nvim-lspconfig",
-    opts = {
-      diagnostics = {
-        virtual_text = false,
-      },
-    },
-  },
+  -- {
+  --   "nvim-lspconfig",
+  --   opts = {
+  --     diagnostics = {
+  --       virtual_text = false,
+  --     },
+  --   },
+  -- },
   {
     "mfussenegger/nvim-dap",
     opts = {
