@@ -3,6 +3,9 @@ return {
 	opts = {
 		defaults = {
 			preview = {
+				session_lens = function()
+					require("telescope").load_extension("session-lens")
+				end,
 				mime_hook = function(filepath, bufnr, opts)
 					local is_image = function(_filepath)
 						local image_extensions = { "png", "jpg" }
