@@ -15,6 +15,9 @@ return {
 	},
 	-- {
 	-- 	"nvim-lualine/lualine.nvim",
+	-- 	dependencies = {
+	-- 		"rmagatti/auto-session",
+	-- 	},
 	-- 	opts = {
 	-- 		sections = {
 	-- 			lualine_z = {
