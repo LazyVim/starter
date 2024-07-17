@@ -19,7 +19,7 @@ return {
 			"nvim-telescope/telescope.nvim",
 		},
 		opts = {
-			auto_session_enable_last_session = true,
+			-- auto_session_enable_last_session = true,
 			auto_session_enabled = true,
 			auto_save_enabled = true,
 			auto_restore_enabled = true,
@@ -37,7 +37,7 @@ return {
 				buftypes_to_ignore = {},
 			},
 			cwd_change_handling = {
-				restore_upcoming_session = true,
+				-- restore_upcoming_session = true,
 				post_cwd_changed_hook = function()
 					require("lualine").refresh()
 				end,
