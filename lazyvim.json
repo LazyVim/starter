@@ -1,5 +1,6 @@
 {
   "extras": [
+    "lazyvim.plugins.extras.coding.mini-surround",
     "lazyvim.plugins.extras.editor.mini-files"
   ],
   "news": {
