@@ -10,6 +10,7 @@ vim.api.nvim_create_autocmd("User", {
 		vim.api.nvim_win_set_config(win_id, { border = "rounded" })
 	end,
 })
+
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(args)
 		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
@@ -23,5 +24,21 @@ vim.api.nvim_create_autocmd("LspAttach", {
 				end
 			end,
 		})
+	end,
+})
+
+vim.api.nvim_create_autocmd("User", {
+	pattern = "BufWritePre",
+	callback = function()
+		local chars = "abcdefghijklmnopqrstuvwxyz"
+		---@type string[]
+		local reg_chars = {}
+		local _ = chars:gsub(".", function(v)
+			table.insert(reg_chars, v)
+		end)
+		for _, v in pairs(reg_chars) do
+			vim.fn.setreg(v, "")
+		end
+		vim.cmd.wshada({ bang = true })
 	end,
 })
