@@ -5,3 +5,4 @@ if vim.g.neovide then
 	vim.opt.linespace = -4
 	vim.g.neovide_refresh_rate = 170
 end
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
