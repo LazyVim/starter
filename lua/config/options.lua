@@ -5,3 +5,4 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.writebackup = false
 vim.opt.spelllang = {}
+vim.diagnostic.config({ virtual_text = false })
