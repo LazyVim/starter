@@ -19,6 +19,9 @@ return {
 			servers = {
 				omnisharp = {
 					enable_editor_config_support = true,
+					settings = {
+						EnableEditorConfigSupport = true,
+					},
 				},
 			},
 		},
