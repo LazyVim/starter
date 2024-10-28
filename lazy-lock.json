@@ -114,6 +114,7 @@
   "telescope-git-submodules.nvim": { "branch": "main", "commit": "e9bbf8b9451dcd7911e0c1bf3ab0f61bb33e0a59" },
   "telescope-import.nvim": { "branch": "main", "commit": "abce03c71791bd27fc9043b62b5483467875b758" },
   "telescope.nvim": { "branch": "master", "commit": "37dc9233a473dd6c3f54456ef9994d8f77c80211" },
+  "text-case.nvim": { "branch": "main", "commit": "e898cfd46fa6cde0e83abb624a16e67d2ffc6457" },
   "tiny-inline-diagnostic.nvim": { "branch": "main", "commit": "ccb67504f93b20f36775d3aad620f9dc9ed98bd9" },
   "todo-comments.nvim": { "branch": "main", "commit": "ae0a2afb47cf7395dc400e5dc4e05274bf4fb9e0" },
   "toggle-checkbox.nvim": { "branch": "main", "commit": "58f958a2dcfb974963d4bb772ad8c3d8a1c62774" },
