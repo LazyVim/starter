@@ -1,7 +1,6 @@
 return {
   { "Mofiqul/vscode.nvim", config = {} },
   { "catppuccin/nvim", name = "catppuccin" },
-
   {
     "jul-o/LazyVim",
     opts = {

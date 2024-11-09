@@ -45,5 +45,7 @@ vim.o.timeout = true
 vim.o.timeoutlen = 300
 
 vim.opt.syntax = "off"
+vim.opt.spell = false
 
 vim.opt.termguicolors = true
+vim.opt.conceallevel = 2

@@ -16,6 +16,9 @@ vim.api.nvim_set_keymap("n", "<C-e>", "<Plug>(coc-snippets-expand)", { noremap =
 vim.keymap.set("i", "<C-Tab>", vim.fn["codeium#Accept"], { expr = true })
 vim.keymap.set("i", "<C-,>", vim.fn["codeium#Complete"], { expr = true })
 
+vim.keymap.set("i", "jh", "<Esc>:w<CR>", { noremap = true, silent = true })
+-- vim.keymap.set("n", "jh", ":w<CR>", { noremap = true, silent = true })
+
 vim.keymap.set("n", "<C-c>", function()
   require("harpoon.ui").nav_prev()
 end, { silent = true, noremap = true })
