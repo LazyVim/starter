@@ -47,18 +47,18 @@ return {
         require("lazyvim.util").lsp.on_attach(function(client)
           if client.name == "eslint" then
             client.server_capabilities.documentFormattingProvider = true
-          elseif client.name == "tsserver" then
+          elseif client.name == "ts_ls" then
             client.server_capabilities.documentFormattingProvider = false
           end
         end)
       end,
 
       tailwindcss = function(_, opts)
-        local tw = require("lspconfig.server_configurations.tailwindcss")
-        --- @param ft string
-        opts.filetypes = vim.tbl_filter(function(ft)
-          return not vim.tbl_contains(opts.filetypes_exclude or {}, ft)
-        end, tw.default_config.filetypes)
+        -- local tw = require("lspconfig.server_configurations.tailwindcss")
+        -- --- @param ft string
+        -- opts.filetypes = vim.tbl_filter(function(ft)
+        --   return not vim.tbl_contains(opts.filetypes_exclude or {}, ft)
+        -- end, tw.default_config.filetypes)
       end,
     },
   },
