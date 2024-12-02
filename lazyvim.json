@@ -1,12 +1,12 @@
 {
-  "extras.bak": [
-    "lazyvim.plugins.extras.editor.leap"
-  ],
   "extras": [
     "lazyvim.plugins.extras.coding.codeium"
   ],
+  "extras.bak": [
+    "lazyvim.plugins.extras.editor.leap"
+  ],
   "news": {
-    "NEWS.md": "2123"
+    "NEWS.md": "7429"
   },
-  "version": 2
+  "version": 7
 }
