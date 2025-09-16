@@ -74,7 +74,7 @@ map("n", "<leader>ue", "<cmd>set relativenumber!<CR>", { desc = "Toggle relative
 map("n", "<leader>gb", "<cmd>Git blame<CR>", { desc = "Git blame" })
 map("n", "<leader>ut", "<cmd>Telescope undo<cr>", { desc = "Undo tree" })
 
--- Codeium
-map("i", "<C-g>", function()
-  return vim.fn["codeium#Accept"]()
-end, { expr = true, desc = "Accept codeium suggestion" })
+-- Copilot
+map("c", "<C-l>", function()
+  vim.fn.feedkeys(vim.fn["copilot#Accept"](), "")
+end, { desc = "Copilot Accept", noremap = true, silent = true })

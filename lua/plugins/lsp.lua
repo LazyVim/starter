@@ -66,7 +66,9 @@ return {
     },
   },
   { "williamboman/mason-lspconfig.nvim" },
-  { "neovim/nvim-lspconfig" },
+  { "neovim/nvim-lspconfig", opts = {
+    inlay_hints = { enabled = false },
+  } },
   {
     url = "https://gitlab.com/schrieveslaach/sonarlint.nvim",
     ft = { "python", "typescript", "typescriptreact", "typescript.tsx" },

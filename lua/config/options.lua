@@ -20,3 +20,4 @@
 
 -- MAC OS Clipboard copy --
 vim.opt.clipboard:append({ "unnamedplus" })
+vim.opt.spell = true
