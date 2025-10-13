@@ -1,9 +1,13 @@
 return {
   "akinsho/bufferline.nvim",
-  init = function()
-    local bufline = require("catppuccin.groups.integrations.bufferline")
-    function bufline.get()
-      return bufline.get_theme()
-    end
-  end,
+  opts = {
+    options = {
+      mode = "buffers",
+      separator_style = "thin", -- or "slant", "thick", "thin"
+      always_show_bufferline = true,
+      show_buffer_close_icons = true,
+      show_close_icon = true,
+      diagnostics = "nvim_lsp",
+    },
+  },
 }

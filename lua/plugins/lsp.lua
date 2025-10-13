@@ -1,5 +1,4 @@
 -- Extra language server protocol options
-
 return {
   { -- Bulb in gutter for code actions
     "kosayoda/nvim-lightbulb",
@@ -51,7 +50,7 @@ return {
     },
   },
   { -- Mason config
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     opts = {
       ui = { border = "rounded" },
       ensure_installed = {
@@ -62,16 +61,18 @@ return {
         "pyright",
         "autopep8",
         "shellcheck",
+        "sonarlint-language-server",
       },
     },
   },
-  { "williamboman/mason-lspconfig.nvim" },
+  { "mason-org/mason-lspconfig.nvim" },
+
   { "neovim/nvim-lspconfig", opts = {
     inlay_hints = { enabled = false },
   } },
   {
     url = "https://gitlab.com/schrieveslaach/sonarlint.nvim",
-    ft = { "python", "typescript", "typescriptreact", "typescript.tsx" },
+    ft = { "python", "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact" },
     dependencies = {
       "mfussenegger/nvim-jdtls",
     },
@@ -79,30 +80,30 @@ return {
       require("sonarlint").setup({
         server = {
           cmd = {
-            "java",
-            "-cp",
-            "-jar",
-            -- Ensure that sonarlint-language-server uses stdio channel
+            "sonarlint-language-server",
             "-stdio",
             "-analyzers",
+            vim.fn.stdpath("data") .. "/mason/share/sonarlint-analyzers/sonarpython.jar",
+            vim.fn.stdpath("data") .. "/mason/share/sonarlint-analyzers/sonarjs.jar",
+            vim.fn.stdpath("data") .. "/mason/share/sonarlint-analyzers/sonarjava.jar",
           },
         },
         filetypes = {
           "python",
           "typescript",
           "typescriptreact",
-          "typescript.tsx",
+          "javascript",
+          "javascriptreact",
         },
       })
     end,
   },
+
   {
     "MeanderingProgrammer/markdown.nvim",
     main = "render-markdown",
     opts = {},
-    name = "render-markdown", -- Only needed if you have another plugin named markdown.nvim
-    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
-    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
-    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
+    name = "render-markdown",
+    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
   },
 }
