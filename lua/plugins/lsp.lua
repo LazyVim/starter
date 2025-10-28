@@ -66,10 +66,42 @@ return {
     },
   },
   { "mason-org/mason-lspconfig.nvim" },
-
-  { "neovim/nvim-lspconfig", opts = {
-    inlay_hints = { enabled = false },
-  } },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      inlay_hints = { enabled = false },
+      servers = {
+        ruff_lsp = {
+          init_options = {
+            settings = {
+              args = {
+                "--ignore=PLC0415", -- Ignore the import-outside-toplevel error
+              },
+            },
+          },
+        },
+        pyright = {
+          settings = {
+            python = {
+              analysis = {
+                diagnosticMode = "openFilesOnly",
+                typeCheckingMode = "basic",
+                autoImportCompletions = true,
+                useLibraryCodeForTypes = true,
+                autoSearchPaths = true,
+                diagnosticSeverityOverrides = {
+                  reportUnusedImport = "information",
+                  reportUnusedVariable = "information",
+                },
+                -- Disable features that conflict with ruff
+                disableOrganizeImports = true, -- Let ruff handle this
+              },
+            },
+          },
+        },
+      },
+    },
+  },
   {
     url = "https://gitlab.com/schrieveslaach/sonarlint.nvim",
     ft = { "python", "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact" },
@@ -89,16 +121,15 @@ return {
           },
         },
         filetypes = {
-          "python",
           "typescript",
           "typescriptreact",
           "javascript",
           "javascriptreact",
+          -- "python",
         },
       })
     end,
   },
-
   {
     "MeanderingProgrammer/markdown.nvim",
     main = "render-markdown",
