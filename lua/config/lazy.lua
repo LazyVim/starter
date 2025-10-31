@@ -23,6 +23,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.rust" },
     { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.linting.eslint" },
+    { import = "lazyvim.plugins.extras.ai.copilot" } ,
     { import = "lazyvim.plugins.extras.ai.avante" } , -- cursor-like features
 
     -- import/override with your plugins
