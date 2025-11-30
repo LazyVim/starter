@@ -27,6 +27,8 @@ return {
           operators = {},
           types = {},
         },
+        -- Lista de integraciones opcionales de material.nvim.
+        -- Solo dejamos las que realmente usamos para evitar advertencias.
         plugins = {
           "gitsigns",
           "nvim-cmp",
@@ -36,7 +38,6 @@ return {
           "which-key",
           "nvim-notify",
           "indent-blankline",
-          "nvim-lspconfig",
         },
         disable = {
           borders = false,
