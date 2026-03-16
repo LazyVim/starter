@@ -1,0 +1,14 @@
+{
+  "extras": [
+    "lazyvim.plugins.extras.ai.claudecode",
+    "lazyvim.plugins.extras.ai.copilot",
+    "lazyvim.plugins.extras.ai.copilot-chat",
+    "lazyvim.plugins.extras.coding.mini-surround",
+    "lazyvim.plugins.extras.lang.markdown"
+  ],
+  "install_version": 8,
+  "news": {
+    "NEWS.md": "11866"
+  },
+  "version": 8
+}

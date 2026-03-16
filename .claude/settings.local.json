@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -rn \"nvim_exec_autocmds\\\\|User.*ClaudeCode\\\\|ClaudeCode.*User\" /home/user/.local/share/nvim/lazy/claudecode.nvim/ --include=\"*.lua\" 2>/dev/null | grep -v test | grep -v spec)",
+      "Bash(grep:*)",
+      "Bash(python3:*)"
+    ]
+  }
+}
