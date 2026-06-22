@@ -19,17 +19,6 @@ require("lazy").setup({
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
 
-    {
-      "mason-org/mason-lspconfig.nvim",
-      opts = {
-        --ensure_installed = { "pyright", "yamlls", "lua_ls", "bashls" },
-      },
-      dependencies = {
-        { "mason-org/mason.nvim", opts = {} },
-        "neovim/nvim-lspconfig",
-      },
-    },
-
     { import = "lazyvim.plugins.extras.lang.python" },
     { import = "lazyvim.plugins.extras.lang.sql" },
     { import = "lazyvim.plugins.extras.lang.yaml" },
