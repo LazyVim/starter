@@ -12,6 +12,15 @@ return {
 	bashls = {},
       },
     },
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "pyright",
+        "lua_ls",
+        "yamlls",
+        "bashls",
+      },
   },
 }
 
