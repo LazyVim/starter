@@ -1,13 +1,13 @@
 -- ~/.config/nvim/lua/plugins/mason.lua
 return {
   {
-    "mason-org/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
     opts = {
-      ensure_installed = {
-        "lua_ls",
-        "pyright",
-        "yamlls",
-        "bashls",
+      servers = {
+        lua_ls = {},
+        pyright = {},
+        yamlls = {},
+        bashls = {},
       },
     },
   },
