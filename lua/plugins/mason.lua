@@ -12,6 +12,7 @@ return {
 	bashls = {},
       },
     },
+  },
   {
     "williamboman/mason.nvim",
     opts = {
