@@ -6,23 +6,12 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
-    "lukas-reineke/cmp-under-comparator", -- Snippet 引擎
     "hrsh7th/vim-vsnip", -- 补全源
-    "hrsh7th/cmp-vsnip", -- 补全源
     "hrsh7th/cmp-nvim-lsp-signature-help", -- { name = 'nvim_lsp_signature_help' }
     "hrsh7th/cmp-emoji", -- 常见编程语言代码段
     "rafamadriz/friendly-snippets",
     "hrsh7th/cmp-cmdline",
   },
-  -- Not all LSP servers add brackets when completing a function.
-  -- To better deal with this, LazyVim adds a custom option to cmp,
-  -- that you can configure. For example:
-  --
-  -- ```lua
-  -- opts = {
-  --   auto_brackets = { "python" }
-  -- }
-  -- ```
   opts = function()
     vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
     local cmp = require("cmp")
@@ -95,17 +84,7 @@ return {
       }),
       snippet = {
         expand = function(args)
-          -- For `vsnip` users.
           vim.fn["vsnip#anonymous"](args.body)
-
-          -- For `luasnip` users.
-          -- require('luasnip').lsp_expand(args.body)
-
-          -- For `ultisnips` users.
-          -- vim.fn["UltiSnips#Anon"](args.body)
-
-          -- For `snippy` users.
-          -- require'snippy'.expand_snippet(args.body)
         end,
       },
       sources = cmp.config.sources({

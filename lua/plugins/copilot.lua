@@ -13,10 +13,11 @@ return {
     },
   },
   {
-    "nvim-cmp",
+    "hrsh7th/nvim-cmp",
     dependencies = {
       {
         "zbirenbaum/copilot-cmp",
+        lazy = true,
         dependencies = "copilot.lua",
         opts = {},
         config = function(_, opts)
@@ -24,9 +25,9 @@ return {
           copilot_cmp.setup(opts)
           -- attach cmp source whenever copilot attaches
           -- fixes lazy-loading issues with the copilot cmp source
-          LazyVim.lsp.on_attach(function(client)
+          Snacks.util.lsp.on({ name = "copilot" }, function()
             copilot_cmp._on_insert_enter({})
-          end, "copilot")
+          end)
         end,
       },
     },
@@ -40,51 +41,34 @@ return {
     end,
   },
   {
-    "zbirenbaum/copilot-cmp",
-    dependencies = "copilot.lua",
-    opts = {},
-    config = function(_, opts)
-      local copilot_cmp = require("copilot_cmp")
-      copilot_cmp.setup(opts)
-      -- attach cmp source whenever copilot attaches
-      -- fixes lazy-loading issues with the copilot cmp source
-      LazyVim.lsp.on_attach(function(client)
-        copilot_cmp._on_insert_enter({})
-      end, "copilot")
-    end,
-  },
-  {
     "nvim-lualine/lualine.nvim",
     optional = true,
     event = "VeryLazy",
     opts = function(_, opts)
       local colors = {
-        [""] = LazyVim.ui.fg("Special"),
-        ["Normal"] = LazyVim.ui.fg("Special"),
-        ["Warning"] = LazyVim.ui.fg("DiagnosticError"),
-        ["InProgress"] = LazyVim.ui.fg("DiagnosticWarn"),
+        [""] = { fg = Snacks.util.color("Special") },
+        ["Normal"] = { fg = Snacks.util.color("Special") },
+        ["Warning"] = { fg = Snacks.util.color("DiagnosticError") },
+        ["InProgress"] = { fg = Snacks.util.color("DiagnosticWarn") },
       }
       table.insert(opts.sections.lualine_x, 2, {
         function()
           local icon = LazyVim.config.icons.kinds.Copilot
-          local status = require("copilot.api").status.data
+          local status = require("copilot.status").data
           return icon .. (status.message or "")
         end,
         cond = function()
           if not package.loaded["copilot"] then
             return
           end
-          local ok, clients = pcall(LazyVim.lsp.get_clients, { name = "copilot", bufnr = 0 })
-          if not ok then
-            return false
-          end
-          return ok and #clients > 0
+          local clients = vim.lsp.get_clients({ name = "copilot", bufnr = 0 })
+          return #clients > 0
         end,
         color = function()
           if not package.loaded["copilot"] then
             return
           end
-          local status = require("copilot.api").status.data
+          local status = require("copilot.status").data
           return colors[status.status] or colors[""]
         end,
       })
