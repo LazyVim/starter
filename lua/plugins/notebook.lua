@@ -14,6 +14,22 @@ with open(p, "w", encoding="utf-8") as f:
 return {
   { "folke/snacks.nvim", opts = { image = { enabled = true } } },
   {
+    -- Snacks pickers send LSP requests without a bufnr, which bypasses ipynb.nvim's shadow proxy:
+    -- in notebook buffers use the built-in commands instead
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        ["*"] = {
+          -- stylua: ignore
+          keys = {
+            { "gd", function() if vim.bo.filetype == "ipynb" then vim.lsp.buf.definition() else Snacks.picker.lsp_definitions() end end, desc = "Goto Definition", has = "definition" },
+            { "gr", function() if vim.bo.filetype == "ipynb" then vim.lsp.buf.references() else Snacks.picker.lsp_references() end end, nowait = true, desc = "References" },
+          },
+        },
+      },
+    },
+  },
+  {
     "ajbucci/ipynb.nvim",
     dependencies = { "nvim-treesitter/nvim-treesitter", "neovim/nvim-lspconfig", "folke/snacks.nvim" },
     opts = { shadow = { location = "workspace" } },
