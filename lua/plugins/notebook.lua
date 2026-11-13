@@ -20,6 +20,23 @@ return {
     config = function(_, opts)
       require("ipynb").setup(opts)
 
+      -- Snacks pickers send LSP requests without a bufnr, which bypasses ipynb.nvim's shadow proxy:
+      -- use the built-in commands in notebook buffers (set after LazyVim's own LspAttach keymaps)
+      vim.api.nvim_create_autocmd("LspAttach", {
+        callback = function(ev)
+          if vim.bo[ev.buf].filetype ~= "ipynb" then
+            return
+          end
+          vim.schedule(function()
+            if not vim.api.nvim_buf_is_valid(ev.buf) then
+              return
+            end
+            vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = ev.buf, desc = "Goto Definition (ipynb)" })
+            vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = ev.buf, desc = "References (ipynb)", nowait = true })
+          end)
+        end,
+      })
+
       -- no project venv: fall back to the scratch kernel env; run the kernel with cwd = notebook dir
       local kernel = require("ipynb.kernel")
       local connect = kernel.connect
